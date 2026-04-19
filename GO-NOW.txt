@@ -1,0 +1,252 @@
+================================================================================
+                    CLAUDE SETUP - GO NOW (Minimal Steps)
+================================================================================
+
+You have everything. Just follow these steps in order. No decisions needed.
+
+================================================================================
+STEP 1: Run the Installation Script (20 minutes)
+================================================================================
+
+1. Open PowerShell as Administrator
+   - Right-click PowerShell icon
+   - Select "Run as administrator"
+
+2. Navigate to the folder with these files:
+   cd C:\Users\<YOUR_USERNAME>\Downloads  (or wherever you saved the files)
+
+3. Run the setup script:
+   .\SETUP-AUTOMATED.ps1
+
+4. Wait for it to finish
+   - It will install: Node.js, Python, UV, Docker, Ollama, Obsidian
+   - Some installs run in background (Docker, Ollama)
+   - That's fine. Continue to Step 2.
+
+⏱️  Takes: 20 min (automated)
+
+================================================================================
+STEP 2: Sign Up for APIs (15 minutes active, then waiting)
+================================================================================
+
+1. Double-click: OPEN-SIGNUP-PAGES.bat
+   - Opens all signup pages in your browser
+
+2. For each page, sign up:
+
+   🟢 FAST (5-10 min each, start NOW):
+   [ ] Firecrawl → copy API key
+   [ ] Google Cloud → create project + API key + service account JSON
+   [ ] Notion → create integration → copy token
+   [ ] DataForSEO → sign up → copy username/password
+   [ ] Supadata → sign up → copy API key
+
+   🔴 SLOW (takes 24-48 hours, can skip for now):
+   [ ] Brave Search → submit for approval → wait for email
+
+3. Save all keys in a password manager:
+   - 1Password, Bitwarden, or LastPass
+   - Label each one (e.g., "Firecrawl API Key", "DataForSEO Login")
+
+⏱️  Takes: 15 min (you do this in parallel with next step)
+
+================================================================================
+STEP 3: Set Up Obsidian (10 minutes)
+================================================================================
+
+1. Open Obsidian
+   - New vault: name it "Claude-Knowledge"
+
+2. Go to Settings → Community plugins
+   - Toggle OFF "Restricted mode"
+   - Click "Browse"
+
+3. Search and install:
+   [ ] "Claude Code" plugin
+   [ ] "Local REST API" plugin
+
+4. Go back to Settings → Community plugins → Installed
+   - Turn both ON
+
+5. Settings → Local REST API
+   - Copy the "API Key" (you'll need this in Step 4)
+
+⏱️  Takes: 10 min
+
+================================================================================
+STEP 4: Update Claude Desktop Config (15 minutes)
+================================================================================
+
+1. Open File Explorer
+   - Go to: C:\Users\<USERNAME>\AppData\Roaming\Claude\
+   - Find: claude_desktop_config.json
+   - BACKUP: Right-click → Copy → Rename to claude_desktop_config.json.bak
+
+2. Open the provided "claude_desktop_config.json" file with Notepad
+
+3. Find-Replace (Ctrl+H in most editors):
+   Replace:                              With:
+   YOUR_FIRECRAWL_API_KEY              [actual key from Firecrawl]
+   YOUR_GOOGLE_KNOWLEDGE_GRAPH_API_KEY [actual key from Google]
+   YOUR_GOOGLE_SERVICE_ACCOUNT_KEY     C:\path\to\service-account.json
+   YOUR_DATAFORSEO_LOGIN               [your DataForSEO username]
+   YOUR_DATAFORSEO_PASSWORD            [your DataForSEO password]
+   YOUR_SUPADATA_API_KEY               [actual key from Supadata]
+   YOUR_NOTION_INTEGRATION_TOKEN       [actual token from Notion]
+   localhost:22360                     localhost:22360 (leave as-is unless you changed Obsidian port)
+
+4. Save the file
+
+5. Close Claude Desktop completely
+   - Right-click Claude in system tray
+   - Click "Quit Claude"
+
+6. Reopen Claude Desktop
+   - Wait 30 seconds for MCPs to load
+   - You're done!
+
+⏱️  Takes: 15 min
+
+================================================================================
+STEP 5: Test One Thing (2 minutes)
+================================================================================
+
+1. In Claude Desktop, ask:
+   "Use Firecrawl to scrape https://example.com and extract all headings."
+
+2. If you get results → ✅ Everything works!
+
+⏱️  Takes: 2 min
+
+================================================================================
+STEP 6: Copy .mcp.json to Your Project (5 minutes, if using Claude Code)
+================================================================================
+
+1. Copy the ".mcp.json" file from this package
+
+2. Paste it into your main code project folder
+   (wherever you run "claude" commands from)
+
+3. In that file, replace the same API key placeholders as Step 4
+
+4. You're done. Claude Code will use those MCPs.
+
+⏱️  Takes: 5 min (optional, only if you use Claude Code)
+
+================================================================================
+STEP 7: Import Skills (10 minutes)
+================================================================================
+
+1. In Claude Desktop, go to Projects (or Skills, depending on version)
+
+2. Click "+ New Skill"
+
+3. For each SKILL file:
+   - Name: [copy from filename, e.g., "designing-web-frontends"]
+   - Description: [copy from the Description section in the file]
+   - Instructions: [copy the entire Instructions section]
+   - Save
+
+4. Repeat for all 4:
+   [ ] SKILL-designing-web-frontends.md
+   [ ] SKILL-developing-fullstack-apps.md
+   [ ] SKILL-building-marketing-campaigns.md
+   [ ] SKILL-maintaining-automation-workflows.md
+
+⏱️  Takes: 10 min
+
+================================================================================
+STEP 8: Test Everything (5 minutes)
+================================================================================
+
+In Claude Desktop, ask each of these:
+
+[ ] Test Firecrawl:
+    "Use Firecrawl to scrape https://example.com and extract all headings."
+
+[ ] Test Obsidian:
+    "List all files in my Obsidian vault."
+
+[ ] Test Notion:
+    "Show me what databases I have in Notion."
+
+[ ] Test Gmail:
+    "Search my Gmail for emails from [any email] in the last 30 days."
+
+[ ] Test a Skill:
+    "Use the designing-web-frontends skill to create a React button."
+
+If all work → ✅ Setup complete!
+
+⏱️  Takes: 5 min
+
+================================================================================
+                              TOTAL TIME
+================================================================================
+
+Step 1 (Install):              20 min   (automated, you wait)
+Step 2 (API Signup):           15 min   (active, parallel with others)
+Step 3 (Obsidian):             10 min   (active)
+Step 4 (Claude Config):        15 min   (active)
+Step 5 (Test):                  2 min   (quick)
+Step 6 (Code config):           5 min   (optional)
+Step 7 (Import Skills):        10 min   (active)
+Step 8 (Final test):            5 min   (quick)
+
+TOTAL ACTIVE TIME:             ~60-75 minutes
+PLUS WAITING:                  24-48 hours (for Brave Search approval, can skip)
+
+================================================================================
+                           AFTER COMPLETION
+================================================================================
+
+You now have:
+
+✅ Claude Desktop with 15 MCPs enabled
+✅ Claude Code with dev MCPs
+✅ Obsidian knowledge base connected
+✅ 4 Custom Skills for frontend, backend, marketing, automation
+✅ Email, Notion, web scraping, SEO research, all wired up
+
+Start using it:
+
+1. Research a competitor:
+   "Use Firecrawl + DataForSEO + Gmail to research [company name]"
+
+2. Build a feature:
+   "Use the designing-web-frontends skill to build a [component]"
+
+3. Plan a campaign:
+   "Use the building-marketing-campaigns skill to plan a campaign for [goal]"
+
+That's it. You're done. 🎉
+
+================================================================================
+                           IF SOMETHING BREAKS
+================================================================================
+
+Before asking for help:
+
+1. Restart Claude Desktop (close completely, reopen)
+   - Fixes 50% of MCP issues
+
+2. Check your API keys in the config
+   - Most errors are because a key is wrong or missing
+
+3. Verify Obsidian plugins are ON
+   - Settings → Community plugins → Installed → check both are enabled
+
+4. Check that .mcp.json is in the right directory
+   - Must be in the folder where you run "claude" command
+
+5. See SETUP-CHECKLIST.md → TROUBLESHOOTING section
+
+================================================================================
+
+Questions? See:
+  - README-SETUP-MASTER.md (overview)
+  - SETUP-CHECKLIST.md (detailed walkthrough)
+  - API-CREDENTIALS-INVENTORY.md (API key details)
+  - MCP-REFERENCE-GUIDE.md (what each MCP does)
+
+Ready? Start with STEP 1 above. ⬆️

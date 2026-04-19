@@ -1,0 +1,85 @@
+{
+  "model": "claude-3-5-sonnet",
+  "mcpServers": {
+    "desktop-commander": {
+      "command": "npx",
+      "args": ["-y", "@wonderwhy-er/desktop-commander"]
+    },
+    "firecrawl-mcp": {
+      "command": "npx",
+      "args": ["-y", "firecrawl-mcp"],
+      "env": {
+        "FIRECRAWL_API_KEY": "YOUR_FIRECRAWL_API_KEY"
+      }
+    },
+    "supadata": {
+      "command": "npx",
+      "args": ["-y", "@supadata/mcp"],
+      "env": {
+        "SUPADATA_API_KEY": "YOUR_SUPADATA_API_KEY"
+      }
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "YOUR_BRAVE_API_KEY"
+      }
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest"]
+    },
+    "obsidian": {
+      "command": "npx",
+      "args": ["mcp-remote", "http://localhost:22360/sse"],
+      "env": {}
+    },
+    "google-knowledge-graph": {
+      "command": "npx",
+      "args": ["-y", "@houtini/google-knowledge-graph-mcp"],
+      "env": {
+        "GOOGLE_KNOWLEDGE_GRAPH_API_KEY": "YOUR_GOOGLE_KG_API_KEY"
+      }
+    },
+    "better-search-console": {
+      "command": "npx",
+      "args": ["-y", "@houtini/better-search-console"],
+      "env": {
+        "GOOGLE_SERVICE_ACCOUNT_KEY": "C:\\path\\to\\service-account.json"
+      }
+    },
+    "dataforseo": {
+      "command": "npx",
+      "args": ["-y", "@nicholasoxford/dataforseo-mcp"],
+      "env": {
+        "DATAFORSEO_LOGIN": "YOUR_DATAFORSEO_LOGIN",
+        "DATAFORSEO_PASSWORD": "YOUR_DATAFORSEO_PASSWORD"
+      }
+    },
+    "gmail": {
+      "command": "npx",
+      "args": ["-y", "@gongrzhe/server-gmail-autoauth-mcp"]
+    },
+    "notion": {
+      "command": "npx",
+      "args": ["-y", "@notionhq/notion-mcp-server"],
+      "env": {
+        "OPENAPI_MCP_HEADERS": "{\"Authorization\":\"Bearer YOUR_NOTION_INTEGRATION_TOKEN\",\"Notion-Version\":\"2022-06-28\"}"
+      }
+    },
+    "graphiti": {
+      "command": "C:\\path\\to\\python.exe",
+      "args": ["-m", "graphiti_mcp.main"],
+      "cwd": "C:\\path\\to\\graphiti\\mcp_server",
+      "env": {
+        "OPENAI_API_KEY": "YOUR_OPENAI_OR_COMPATIBLE_KEY",
+        "GRAPHITI_TELEMETRY_ENABLED": "false"
+      }
+    }
+  }
+}
